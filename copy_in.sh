@@ -13,4 +13,6 @@ for dir in "${CONFIG_DIRS[@]}"; do
     cp -r "$HOME/.config/$dir" .
 done
 
+cp ~/.zshrc .
+
 git status
