@@ -7,6 +7,7 @@ CONFIG_DIRS=(
     nvim
     tmux
     waybar
+    fontconfig
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
