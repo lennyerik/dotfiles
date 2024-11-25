@@ -9,6 +9,7 @@ XDG_CONFIG_DIRS=(
     waybar
     fontconfig
     kwalletrc
+    systemd
 )
 
 ADDITIONAL_FILES=(
