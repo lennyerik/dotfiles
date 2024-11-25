@@ -8,6 +8,7 @@ XDG_CONFIG_DIRS=(
     tmux
     waybar
     fontconfig
+    kwalletrc
 )
 
 ADDITIONAL_FILES=(
