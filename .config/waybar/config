@@ -3,7 +3,12 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "network", "cpu", "memory", "clock"],
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 70,
+        "format-length": "{title}…"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -11,5 +16,28 @@
             "deactivated": "💤"
         },
         "tooltip": false
+    },
+    "network": {
+        "format-wifi": "🛜 {essid} 🌐 {ipaddr}",
+        "format-ethernet": "🌐 {ipaddr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "📶 No IP on {ifname}",
+        "format-disconnected": "❌ No Internet"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "🕋 {icon0} {usage:<2}%",
+        "format-icons": [
+            "",
+            "🔥"
+        ]
+    },
+    "memory": {
+        "format": "🐏 {used:0.1f} GiB",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%d %b (%m) %Y}"
     }
 }
