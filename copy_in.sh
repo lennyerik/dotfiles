@@ -2,7 +2,7 @@
 
 set -e
 
-CONFIG_DIRS=(
+XDG_CONFIG_DIRS=(
     hypr
     nvim
     tmux
@@ -10,8 +10,19 @@ CONFIG_DIRS=(
     fontconfig
 )
 
-for dir in "${CONFIG_DIRS[@]}"; do
-    cp -r "$HOME/.config/$dir" .
+ADDITIONAL_FILES=(
+    .zshrc
+    .cargo/config.toml
+)
+
+for dir in "${XDG_CONFIG_DIRS[@]}"; do
+    cp -r "$HOME/.config/$dir" ./.config
+done
+
+for f in "${ADDITIONAL_FILES[@]}"; do
+    FOLDER=$(dirname "$f")
+    mkdir -p "$FOLDER"
+    cp "$HOME/$f" ./$FOLDER
 done
 
 cp ~/.zshrc .
