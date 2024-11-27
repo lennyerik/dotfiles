@@ -10,6 +10,7 @@ XDG_CONFIG_DIRS=(
     fontconfig
     kwalletrc
     systemd
+    gdb
 )
 
 ADDITIONAL_FILES=(
