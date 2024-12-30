@@ -11,6 +11,7 @@ XDG_CONFIG_DIRS=(
     kwalletrc
     systemd
     gdb
+    code-flags.conf
 )
 
 ADDITIONAL_FILES=(
