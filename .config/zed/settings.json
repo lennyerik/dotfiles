@@ -1,0 +1,85 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "vim_mode": true,
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
+  "theme": {
+    "mode": "system",
+    "light": "macOS Classic Light",
+    "dark": "macOS Classic Dark"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+          "extraArgs": ["--", "-W", "clippy::pedantic", "-W", "clippy::nursery"]
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lint": {
+            "enable": true,
+            "select": ["ALL"],
+            "ignore": [
+              "D100", // Missing docstring in public module.
+              "D101", // Missing docstring in public class.
+              "D102", // Missing docstring in public method.
+              "D103", // Missing docstring in public function.
+              "D104", // Missing docstring in public package.
+              "D105", // Missing docstring in magic method.
+              "D106", // Missing docstring in public nested class.
+              "D107", // Missing docstring in public init method.
+              "T201" // Print statement found.
+            ]
+          },
+          "codeAction": {
+            "fixViolation": {
+              "enable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
