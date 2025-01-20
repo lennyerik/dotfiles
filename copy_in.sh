@@ -12,6 +12,7 @@ XDG_CONFIG_DIRS=(
     systemd
     gdb
     zed
+    xdg-desktop-portal
     code-flags.conf
 )
 
