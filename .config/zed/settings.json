@@ -31,7 +31,7 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": ["pyright", "ruff"],
       "formatter": [
         {
           "code_actions": {
