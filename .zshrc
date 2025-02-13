@@ -87,6 +87,9 @@ export PATH="$PATH:/opt/cuda/bin/"
 export PATH="$PATH:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/"
 export PATH="$PATH:$HOME/.cargo/bin/"
 
+# Zigup
+alias zigup="zigup --path-link \"$HOME/.local/bin/zig\" --install-dir \"$HOME/.local/share/zig\""
+
 # Flutter
 export PATH="$PATH:/opt/flutter/bin"
 export CHROME_EXECUTABLE="/usr/bin/brave"
