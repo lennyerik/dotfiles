@@ -69,6 +69,7 @@ if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
 else
     export EDITOR='nvim'
+    export VISUAL='zed --wait'
 fi
 
 alias l="ls -lh"
@@ -90,6 +91,9 @@ export PATH="$PATH:$HOME/.cargo/bin/"
 # Zigup
 alias zigup="zigup --path-link \"$HOME/.local/bin/zig\" --install-dir \"$HOME/.local/share/zig\""
 
+# Android
+export ANDROID_HOME="$HOME/Android/Sdk"
+
 # Flutter
 export PATH="$PATH:/opt/flutter/bin"
 export CHROME_EXECUTABLE="/usr/bin/brave"
@@ -101,3 +105,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # zsh-syntax-highlighting (https://archlinux.org/packages/extra/any/zsh-syntax-highlighting/)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+. "$HOME/.cargo/env"
+

@@ -7,7 +7,29 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "assistant": {
+  "show_edit_predictions": false,
+  "ssh_connections": [
+    {
+      "host": "friday",
+      "projects": [
+        {
+          "paths": ["~/work/erichsen"]
+        }
+      ]
+    },
+    {
+      "host": "jarvis",
+      "projects": [
+        {
+          "paths": ["/opt/containers"]
+        },
+        {
+          "paths": ["/opt/containers/endlessh"]
+        }
+      ]
+    }
+  ],
+  "agent": {
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o"
@@ -15,7 +37,7 @@
     "version": "2"
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "edit_prediction_provider": "copilot"
   },
   "telemetry": {
     "metrics": false,
@@ -30,6 +52,15 @@
     "dark": "macOS Classic Dark"
   },
   "languages": {
+    "YAML": {
+      "tab_size": 4
+    },
+    "OpenSCAD": {
+      "show_edit_predictions": false
+    },
+    "Rust": {
+      "show_edit_predictions": false
+    },
     "Python": {
       "language_servers": ["pyright", "ruff"],
       "formatter": [
@@ -44,7 +75,13 @@
           }
         }
       ]
+    },
+    "Markdown": {
+      "tab_size": 4
     }
+  },
+  "file_types": {
+    "C++": ["ino"]
   },
   "lsp": {
     "rust-analyzer": {
@@ -59,8 +96,8 @@
       "initialization_options": {
         "settings": {
           "lint": {
-            "enable": true,
-            "select": ["ALL"],
+            "enable": true
+            /*"select": ["ALL"],
             "ignore": [
               "D100", // Missing docstring in public module.
               "D101", // Missing docstring in public class.
@@ -71,7 +108,7 @@
               "D106", // Missing docstring in public nested class.
               "D107", // Missing docstring in public init method.
               "T201" // Print statement found.
-            ]
+            ]*/
           },
           "codeAction": {
             "fixViolation": {

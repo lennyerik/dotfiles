@@ -8,6 +8,11 @@ window#waybar {
     color: #000
 }
 
+#submap {
+    margin-right: 1em;
+    color: #ff0;
+}
+
 #workspaces button, #window {
     color: #999;
 }
